@@ -1,11 +1,14 @@
 {
-    "name": "AjaxTest",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "Jose Arriaga",
-    "license": "ISC"
+  "name": "AjaxTest",
+  "version": "1.0.0",
+  "description": "Ajax test application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jose Arriaga",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }
