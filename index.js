@@ -17,7 +17,6 @@ app.get('/', function(req, res) {
 		res.setHeader('Content-Type', 'text/html');
 		res.send(html);
 	});
-	//res.render('index', {});
 });
 
 app.get('/quote/random', function(req, res) {
