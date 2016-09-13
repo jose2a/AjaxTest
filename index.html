@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Ajax Sample with NodeJS</title>
+	</head>
+	<body>
+		<h1>Random phrases</h1>
+		<p>Press the button to get random phrases!!!</p>
+		<input type="button" value="Get your phrase" id="btnPhrase"/>
+		<p><strong><i>Your quote:</i></strong> <span id="quote"></span>, <strong><i>By: </i></strong><span id="author"></span></p>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				var btnPhrase = $('#btnPhrase');
+				btnPhrase.click(function(e) {
+					e.preventDefault();
+					showQuote();					
+				});
+				
+				function showQuote() {
+					$.get('./quote/random', function(data, status) {
+						console.log(status);
+						$('#quote').html(data.text);
+						$('#author').html(data.author);
+					});
+				}
+			
+				showQuote();
+
+			});
+		</script>
+	</body>
+</html>
