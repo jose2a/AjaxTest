@@ -9,6 +9,7 @@
   "author": "Jose Arriaga",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "fs": "0.0.1-security"
   }
 }
