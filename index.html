@@ -1,37 +1,22 @@
 <html>
 	<head>
 		<title>Ajax Sample with NodeJS</title>
+		<link rel="stylesheet" type="text/css" href="css/site.css"/> 
 	</head>
 	<body>
-		<h1>Random phrases</h1>
-		<p>Press the button to get random phrases!!!</p>
-		<input type="button" value="Get your phrase" id="btnPhrase"/>
-		<p><strong><i>Your quote:</i></strong> <span id="quote"></span>, <strong><i>By: </i></strong><span id="author"></span></p>
+		<h1>Random quotes</h1>
+		<p>Press the button to get random quotes!!!</p>
+		<input type="button" value="Get your quote" id="btnPhrase"/>
+		<div class="quote">
+			<div>
+				<i>Your quote: </i><span id="quote"></span>
+			</div>			
+			<div class="author">
+				<i>By: </i><span id="author"></span>
+			</div>	
+		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script>
-			$(document).ready(function() {
-				
-				// Adding click event to the button
-				var btnPhrase = $('#btnPhrase');
-
-				btnPhrase.click(function(e) {
-					e.preventDefault();
-					showQuote();					
-				});
-				
-				// Function that will get the quotes from the server using jQuery
-				function showQuote() {
-					$.get('./quote/random', function(data, status) {
-						console.log(status);
-						$('#quote').html(data.text);
-						$('#author').html(data.author);
-					});
-				}
-			
-				showQuote();
-
-			});
-		</script>
+		<script src="js/app.js"></script>
 	</body>
 </html>

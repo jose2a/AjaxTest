@@ -2,6 +2,8 @@ var express = require('express'), // Importing express framework
 	fs = require('fs'); // Importing fs (allows reading a file from the HD)
 
 var app = express(); // Creating an express object
+//console.log(___dirname);
+app.use(express.static('./public'));
 
 // Array of authors and quotes that will be sent to the user
 var quotes = [
@@ -17,7 +19,7 @@ var quotes = [
  * as a reponse.
  */
 app.get('/', function(req, res) {
-	// Reading the filed
+	// Reading the file
 	fs.readFile('index.html', function(error, html) {
 		if (error) {
 			throw error;
