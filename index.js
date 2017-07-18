@@ -5,12 +5,18 @@ var app = express(); // Creating an express object
 //console.log(___dirname);
 app.use(express.static('./public'));
 
+function Quote(author, text) {
+	this.author = author;
+	this.text = text;
+}
+
 // Array of authors and quotes that will be sent to the user
 var quotes = [
-	{ author : 'Audrey Hepburn', text : "Nothing is impossible, the word itself says 'I'm possible'!"},
-	{ author : 'Walt Disney', text : "You may not realize it when it happens, but a kick in the teeth may be the best thing in the world for you"},
-	{ author : 'Unknown', text : "Even the greatest was once a beginner. Don't be afraid to take that first step."},
-	{ author : 'Neale Donald Walsch', text : "You are afraid to die, and you're afraid to live. What a way to exist."}
+	new Quote("Audrey Hepburn", "Nothing is impossible, the word itself says 'I'm possible'!"),
+	//{ author : 'Audrey Hepburn', text : "Nothing is impossible, the word itself says 'I'm possible'!"},
+	new Quote('Walt Disney', "You may not realize it when it happens, but a kick in the teeth may be the best thing in the world for you"),
+	new Quote('Unknown', "Even the greatest was once a beginner. Don't be afraid to take that first step."),
+	new Quote('Neale Donald Walsch', "You are afraid to die, and you're afraid to live. What a way to exist.")
 ];
 
 /* 
